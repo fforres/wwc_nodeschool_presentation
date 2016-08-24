@@ -1,0 +1,10 @@
+for (var i = 0; i < 10; i++)
+  funcionConCallback()
+};
+
+function funcionConCallback() {
+  // {...}
+  callback() {
+    console.log("Hola Mundo")
+  }
+}

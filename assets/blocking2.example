@@ -1,0 +1,5 @@
+while (true) {
+  console.log('Hola');
+}
+
+console.log('Mundo')

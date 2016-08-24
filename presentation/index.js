@@ -21,6 +21,7 @@ const images = {
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
+  npm: require("../assets/npm.png"),
   noders: require("../assets/noders.png"),
   fforres: require("../assets/fforres.jpg"),
   groupon: require("../assets/groupon.png"),
@@ -30,6 +31,15 @@ const images = {
   gdg: require("../assets/gdg.png"),
   shame: require("../assets/sh.gif"),
   fry: require("../assets/fry.gif"),
+  suck: require("../assets/suck.gif"),
+  awesome: require("../assets/awesome.jpg"),
+  godaddy: require("../assets/gd_logo.png"),
+  uber: require("../assets/uber.png"),
+  linkedin: require("../assets/linkedin.png"),
+  wallmart: require("../assets/wallmart.png"),
+  microsoft: require("../assets/microsoft.png"),
+  paypal: require("../assets/paypal.png"),
+  what: require("../assets/what.gif"),
 };
 
 preloader(images);
@@ -40,7 +50,9 @@ const theme = createTheme({
   secondary: "#cc1301",
   tertiary: "teal",
   groupon: "#53a318",
-  dark: "black",
+  grouponDark: "#50a010",
+  js: "#f0db4f",
+  dark: "#282828",
   clear: "white"
 });
 
@@ -48,11 +60,11 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck progress={'bar'} transition={["zoom", "slide"]} transitionDuration={500}>
+        <Deck progress={'bar'} transition={["spin"]} transitionDuration={700}>
 
           <Slide transition={["slide"]} bgColor="dark">
             <Image src={images.noders.replace("/", "")} width="100%"/>
-            <Heading size={1} fit lineHeight={1}>
+            <Heading size={1} fit lineHeight={1} textColor="clear">
               ¿Por qué? Porque nos gusta.
             </Heading>
           </Slide>
@@ -102,10 +114,12 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["slide"]} bgColor="dark">
             <Heading size={1} fit caps lineHeight={1} textColor="clear">
-              Ruby? Python? PHP?!?
+              PHP Sucks NodeJS Rocks
             </Heading>
             <Appear fid="1">
-              <Image src={images.shame.replace("/", "")} margin="0px auto" padding="0.3em" width="100%"/>
+              <Heading size={1} caps lineHeight={1} textColor="clear">
+                Booooo
+              </Heading>
             </Appear>
             <Appear fid="1">
               <Text textColor="groupon">by @fforres</Text>
@@ -125,171 +139,209 @@ export default class Presentation extends React.Component {
           </Slide>
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="base">
-            <Heading size={1} fit lineHeight={1} textColor="clear">
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Heading size={1} fit lineHeight={1} textColor="clear" margin={"0.5em 0em"}>
               ¿Qué NO es NodeJS?
             </Heading>
+            <Appear><Text lineHeight={2} textSize="1.6em" textColor="groupon">Una librería</Text></Appear>
+            <Appear><Text lineHeight={2} textSize="1.6em" textColor="groupon">Un Lenguaje</Text></Appear>
+            <Appear><Text lineHeight={2} textSize="1.6em" textColor="groupon">Un framework</Text></Appear>
           </Slide>
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="base">
-            <Heading size={1} fit lineHeight={1} textColor="clear">
-              ¿Que es JavaScript?
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Heading size={1} lineHeight={1} textColor="clear" margin={"0.5em 0em"}>
+              Es
+            </Heading>
+            <Appear>
+              <Text lineHeight={2} fontSize={"1.2em"} textColor="groupon">Plataforma JS</Text>
+            </Appear>
+            <Appear>
+              <Text lineHeight={2} fontSize={"1.2em"} textColor="groupon">Chromium V8</Text>
+            </Appear>
+            <Appear>
+            <Text lineHeight={2} fontSize={"1.2em"} textColor="groupon">Awesome</Text>
+            </Appear>
+          </Slide>
+
+          <Slide transition={["zoom"]} bgImage={images.awesome.replace("/", "")} bgDarken={0.25}/>
+
+          <Slide transition={["zoom", "zoom"]} bgColor="dark">
+            <Heading size={1} lineHeight={1} textColor="clear">
+              ¿Alguien lo usa?
             </Heading>
           </Slide>
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="base">
+          <Slide transition={["zoom", "fade"]} bgColor="clear">
+            <Image src={images.godaddy.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+            <Image src={images.uber.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+            <Image src={images.groupon.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+            <Image src={images.linkedin.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+            <Image src={images.wallmart.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+            <Image src={images.microsoft.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+            <Image src={images.paypal.replace("/", "")} margin="0px auto" padding="0.3em" width="36%"/>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="js">
+            <Heading size={1} lineHeight={1} textColor="dark">
+              JS
+            </Heading>
+          </Slide>
+
+
+          <Slide transition={["zoom", "fade"]} bgColor="js">
+            <Text lineHeight={1.5} textSize="2em" textColor="dark">Lenguaje Asíncrono</Text>
+            <Text lineHeight={1.5} textSize="2em" textColor="dark">Debilmente Tipado</Text>
+            <Text lineHeight={1.5} textSize="2em" textColor="dark">No Bloqueante</Text>
+            <Text lineHeight={1.5} textSize="2em" textColor="dark">Concurrente</Text>
+            <Text lineHeight={1.5} textSize="2em" textColor="dark">MonoHilo</Text>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Image src={images.what.replace("/", "")} margin="0px auto" padding="0.3em"/>
+          </Slide>
+
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Text lineHeight={1.5} textSize="1.6em" textColor="clear"> Bloqueante</Text>
+            <Text lineHeight={1.5} textSize="3em" textColor="clear"> V/S </Text>
+            <Text lineHeight={1.5} textSize="1.6em" textColor="clear">No Bloqueante</Text>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
             <CodePane
-              lang="jsx"
-              source={require("raw!../assets/deck.example")}
+              lang="js"
+              source={require("raw!../assets/blocking2.example")}
               margin="20px auto"
+              textSize="1.6em"
+            />
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/blocking3.example")}
+              margin="20px auto"
+              textSize="1.6em"
+            />
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="grouponDark">
+            <Heading lineHeight={1} textColor="clear"> Callbacks </Heading>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark"
+            notes="<ul><li>Jquery</li><li>Meetup</li></ul>"
+          >
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/nonblocking.example")}
+              margin="20px auto"
+              textSize="1em"
             />
           </Slide>
 
 
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="base">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="base">
-                Background Imagery
-              </Heading>
-            </Appear>
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Image src={images.nodejs.replace("/", "")} margin="0px auto" padding="0.3em"/>
+            <Text lineHeight={1} textSize="2em" textColor="clear"> nodejs.org </Text>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Text lineHeight={2} textSize="3em" textColor="clear"> node </Text>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Text lineHeight={2} textSize="3em" textColor="clear"> index.js </Text>
+            <Text lineHeight={2} textSize="3em" textColor="clear"> console.log('hola mundo') </Text>
+            <Text lineHeight={2} textSize="3em" textColor="clear"> node index.js </Text>
           </Slide>
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="base">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
+          <Slide transition={["zoom", "fade"]} bgColor="clear">
+            <Image src={images.npm.replace("/", "")} margin="0px auto" padding="0.3em" width="70%"/>
           </Slide>
 
 
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary">
+            <Text lineHeight={2} textSize="3em" textColor="clear"> npm -v </Text>
           </Slide>
 
 
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="base">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And let's not forget **bold**
-              `}
-            </Markdown>
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Text lineHeight={2} textSize="3em" textColor="clear"> npm install -g learnyounode </Text>
+            <Text lineHeight={2} textSize="3em" textColor="clear"> npm install -g javascripting </Text>
           </Slide>
 
-
-          <Slide transition={["slide", "spin"]} bgColor="base">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
+          <Slide transition={["fade", "fade"]} bgColor="teal" />
 
 
-          <Slide transition={["fade"]} bgColor="secondary" textColor="base">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-
-
-          <Slide transition={["slide"]} bgColor="base">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-
-
-          <Slide transition={["slide"]} bgColor="base"
-            notes="Hard to find cities without any pizza"
+          <Slide transition={["zoom", "fade"]} bgColor="teal"
+            notes="<ul>
+              <li>Ryan Dahl</li>
+              <li>Nginx como inspiracion</li>
+              <li>Escalabilidad</li>
+              <li>COmunidad</li>
+              <li>NodeSchool</li>
+            </ul>"
           >
-            <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-              Pizza Toppings
-            </Heading>
-            <Layout>
-              <Table>
-                <thead>
-                  <TableRow>
-                    <TableHeaderItem/>
-                    <TableHeaderItem>2011</TableHeaderItem>
-                    <TableHeaderItem>2013</TableHeaderItem>
-                    <TableHeaderItem>2015</TableHeaderItem>
-                  </TableRow>
-                </thead>
-                <tbody>
-                  <TableRow>
-                    <TableItem>None</TableItem>
-                    <TableItem>61.8%</TableItem>
-                    <TableItem>39.6%</TableItem>
-                    <TableItem>35.0%</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem>Pineapple</TableItem>
-                    <TableItem>28.3%</TableItem>
-                    <TableItem>54.5%</TableItem>
-                    <TableItem>61.5%</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem>Pepperoni</TableItem>
-                    <TableItem/>
-                    <TableItem>50.2%</TableItem>
-                    <TableItem>77.2%</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem>Olives</TableItem>
-                    <TableItem/>
-                    <TableItem>24.9%</TableItem>
-                    <TableItem>55.9%</TableItem>
-                  </TableRow>
-                </tbody>
-              </Table>
-            </Layout>
+            <Text lineHeight={1.2} textSize="1.2em" margin={"1em 0em"} textColor="clear">
+              Philip Roberts - What the heck is the event loop anyway?
+              <br/>
+              https://www.youtube.com/watch?v=8aGhZQkoFbQ
+            </Text>
+
+
+            <Text lineHeight={1.2} textSize="1.2em" margin={"1em 0em"} textColor="clear">
+              Douglas Crockford - Javascript The good parts
+              <br/>
+              http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf
+            </Text>
+
+
+            <Text lineHeight={1.2} textSize="1.2em" margin={"1em 0em"} textColor="clear">
+              Kyle Simpsons (@Getify) - https://github.com/getify/You-Dont-Know-JS
+              <br/>
+              https://www.youtube.com/watch?v=2pL28CcEijU
+            </Text>
+
+
+            <Text lineHeight={1.2} textSize="1.2em" margin={"1em 0em"} textColor="clear">
+              NodeJS Original Presentation - Ryan Dahl
+              <br/>
+              https://www.youtube.com/watch?v=ztspvPYybIY
+              <br/>
+              http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf
+            </Text>
+
+
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Appear>
+              <Text lineHeight={2} textSize="3em" textColor="clear"> No saber... está bién.</Text>
+            </Appear>
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Image width="100%" src={images.suck.replace("/", "")}/>
           </Slide>
 
 
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="base">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidable.com"><Image width="100%" src={images.logo}/></Link>
+          <Slide transition={["zoom", "fade"]} bgColor="dark">
+            <Appear fid="1">
+              <Text lineHeight={1.5} textSize="2em" textColor="clear"> With love by </Text>
+            </Appear>
+            <Appear fid="1">
+              <Link href="http://www.noders.com">
+                <Image width="100%" src={images.noders.replace("/", "")}/>
+              </Link>
+            </Appear>
+            <Appear fid="1">
+              <Text lineHeight={2} textSize="1.5em" textColor="clear"> Noders.com | @fforres </Text>
+            </Appear>
           </Slide>
 
 
